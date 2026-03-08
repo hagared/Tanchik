@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Танчики Мультиплеер</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginScreen">
+    <div id="loginBox">
+      <h1>Танчики Мультиплеер</h1>
+      <input type="text" id="nicknameInput" placeholder="Введи свой ник" maxlength="15" />
+      <button id="playButton">Играть</button>
+    </div>
+  </div>
+  
+  <div id="ui" style="display: none;">
+    <div id="stats">
+      <div>Ник: <span id="nickname">-</span></div>
+      <div>Здоровье: <span id="health">100</span></div>
+      <div>Очки: <span id="score">0</span></div>
+      <div>Скорость: <span id="speed">3</span></div>
+      <div>Урон: <span id="damage">10</span></div>
+      <div>Игроков: <span id="players">1</span></div>
+    </div>
+    <div id="controls">
+      WASD - движение | Мышь - прицел | ЛКМ - выстрел | TAB - таблица
+    </div>
+  </div>
+  
+  <div id="leaderboard">
+    <h2>Таблица игроков</h2>
+    <div id="leaderboardList"></div>
+  </div>
+  
+  <div id="game"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
